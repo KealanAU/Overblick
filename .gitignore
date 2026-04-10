@@ -14,12 +14,20 @@ dist-ssr
 
 # Tauri / Rust build artifacts
 src-tauri/target
+src-tauri/gen/
+
+# Generated type declaration files
+auto-imports.d.ts
+components.d.ts
+
+# Claude Code local settings
+.claude/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
+**/.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
