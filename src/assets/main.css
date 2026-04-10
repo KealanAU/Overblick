@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-ExtralightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neuton';
+  src: url('./fonts/Neuton-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: 'Neuton', Georgia, serif;
+}
+
+/* Wire backgrounds and text to the neutral palette so they react when the
+   user switches neutral colour at runtime via useTheme.js.
+   Docs: https://ui.nuxt.com/getting-started/theme/css-variables */
+:root {
+  --ui-bg:          var(--ui-color-neutral-50);
+  --ui-bg-muted:    var(--ui-color-neutral-100);
+  --ui-bg-elevated: var(--ui-color-neutral-100);
+  --ui-bg-accented: var(--ui-color-neutral-200);
+}
+
+.dark {
+  --ui-bg:          var(--ui-color-neutral-950);
+  --ui-bg-muted:    var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-900);
+  --ui-bg-accented: var(--ui-color-neutral-800);
+}
+
+/* Global transitions — smooth color, background, and border changes everywhere */
+*, *::before, *::after {
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+/* Fade transition for main content view switching */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 150ms ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Hide native number input spinners — custom +/- buttons are used instead */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
